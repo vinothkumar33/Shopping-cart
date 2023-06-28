@@ -1,6 +1,5 @@
 import './App.css';
 import './style.css'
-import { Routes, Route, HashRouter } from "react-router-dom";
 
 import NavBar from './component/navbar';
 import Product from './component/product';

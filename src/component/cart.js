@@ -1,4 +1,4 @@
-import { useState,useContext,useEffect } from 'react';
+import { useState,useEffect } from 'react';
 import { Card } from '@mui/material';
 import { Button} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -43,7 +43,7 @@ function Cart(){
     //increment a product count in cart
     const incrementCount=(id)=>{
           cart.map((product)=>{
-            if(product.id == id){
+            if(product.id === id){
                 product.count += 1;
             }
           })
@@ -55,7 +55,7 @@ function Cart(){
     //decrement a product count in cart
     const decrementCount=(id)=>{
         cart.map((product)=>{
-            if(product.id == id){
+            if(product.id === id){
                 if(product.count >0){
                     product.count -= 1;
                 }
