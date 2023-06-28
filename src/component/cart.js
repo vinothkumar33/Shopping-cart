@@ -14,14 +14,14 @@ function Cart(){
         if (items) {
          setCart(items);
         }
-      });
+      },[]);
       
       //add product amount in total amount
       const addAmount=()=>{
         cart.map((product)=>{   
             if(product.count >0){ 
               let newamount =amount + product.amount;
-              setAmount(newamount)
+              return setAmount(newamount)
             }    
         })
     }
@@ -32,11 +32,12 @@ function Cart(){
             let newamount;
             if(product.count >0){ 
               newamount =amount - product.amount;
-              setAmount(newamount)
+             setAmount(newamount)
             }
             if(newamount <=0){
                 setAmount(0)
             }   
+            return
         })
     }
     
@@ -44,7 +45,7 @@ function Cart(){
     const incrementCount=(id)=>{
           cart.map((product)=>{
             if(product.id === id){
-                product.count += 1;
+               return product.count += 1;
             }
           })
           addAmount()
