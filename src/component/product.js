@@ -19,7 +19,7 @@ function Product(){
     //add the product in cart ans set the data in localstorage
     const addtoCart=(id)=>{      
        cart.map((product)=>{
-            if(product.id == id){
+            if(product.id === id){
                 product.count = 1;
             }
        })
