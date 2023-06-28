@@ -14,14 +14,14 @@ function Cart(){
         if (items) {
          setCart(items);
         }
-      },[]);
+      });
       
       //add product amount in total amount
       const addAmount=()=>{
         cart.map((product)=>{   
             if(product.count >0){ 
               let newamount =amount + product.amount;
-              return setAmount(newamount)
+               setAmount(newamount)
             }    
         })
     }
@@ -37,7 +37,7 @@ function Cart(){
             if(newamount <=0){
                 setAmount(0)
             }   
-            return
+            
         })
     }
     
@@ -45,7 +45,7 @@ function Cart(){
     const incrementCount=(id)=>{
           cart.map((product)=>{
             if(product.id === id){
-               return product.count += 1;
+                product.count += 1;
             }
           })
           addAmount()

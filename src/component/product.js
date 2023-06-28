@@ -14,13 +14,13 @@ function Product(){
         if (items) {
          setCart(items);
         }
-      },[]);
+      });
      
     //add the product in cart ans set the data in localstorage
     const addtoCart=(id)=>{      
        cart.map((product)=>{
             if(product.id === id){
-               return product.count = 1;
+               product.count = 1;
             }
        })
        localStorage.setItem('products', JSON.stringify(cart));
